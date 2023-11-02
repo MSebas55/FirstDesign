@@ -24,10 +24,12 @@ public class SplashScreen extends AppCompatActivity {
 
         ImageView logoSplash = findViewById(R.id.logoSplash);
         TextView appNameSplash = findViewById(R.id.appNameSplash);
+
         Animation fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-        Animation shakeAnimation = AnimationUtils.loadAnimation(this,R.anim.shake);
-        logoSplash.startAnimation(shakeAnimation);
         appNameSplash.startAnimation(fadeAnimation);
+
+        Animation shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.shake);
+        logoSplash.startAnimation(shakeAnimation);
 
         ImageView background = findViewById(R.id.backgroundSplash);
         Glide.with(this)
@@ -41,12 +43,11 @@ public class SplashScreen extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this, MainActivity.class);
-                //impide q podamos volver al splash screen
+                Intent intent = new Intent(SplashScreen.this, Login.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
-        }, 2000);
+        }, 3000);
     }
 }

@@ -1,7 +1,6 @@
 package com.mcas2.firstdesign;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
 public class Login extends AppCompatActivity {
